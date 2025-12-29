@@ -1,3 +1,6 @@
+from presentations.simple import display_character_simple
+from presentations.extended import display_character_extended             
+from presentations.full import display_character_full
 def read_file():
     with open("character.csv") as file_data:
         char_data = file_data.read()
@@ -29,11 +32,41 @@ def load_character(file_data):
     return character
 
 def main():
-    current_char = load_character(file_data)
-    
-    
+    character = load_character(file_data)
 
 
+    while True:
+        print("RPG Character Engine")
+        print()
+        print("1. Show Simple Character Sheet")
+        print("2. Show Extended Character Sheet")
+        print("3. Show All/Debug Character Sheet")
+        print("4. Exit")
+        print()
+        menu_choice = input("Enter your choice: ")
+        
+        if menu_choice == "1":
+            display_character_simple(character)
+            print()
+            input("Press Enter to return to menu...")
+
+        elif menu_choice == "2":
+            display_character_extended(character)
+            print()
+            input("Press Enter to return to menu...")
+
+        elif menu_choice == "3":
+            display_character_full(character)
+            print()
+            input("Press Enter to return to menu...")
+
+        elif menu_choice == "4":
+             break
+        
+        else:
+            print()
+            print("Unknown command. Please try again.")
+            print()
 
 
 if __name__ == "__main__":
