@@ -43,10 +43,10 @@ rpg-character-engine/
 
 ## Planned Features / Future Work
 
-- Presentation layers:
-  - Simple view (core character info)
-  - Extended view (skills, inventory, equipment)
-  - Full debug view (all character data)
+~~- Presentation layers:~~
+  ~~- Simple view (core character info)~~
+  ~~- Extended view (skills, inventory, equipment)~~
+  ~~- Full debug view (all character data)~~
 - Export character data to JSON
 - Global item / weapon database (separate from character sheets)
 - Inventory and stat calculations
