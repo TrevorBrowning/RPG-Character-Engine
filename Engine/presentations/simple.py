@@ -4,11 +4,12 @@ def display_character_simple(character):
     print()
     print("=== Character Overview ===")
     print()
-    print(f"Name: {character['Name'][0]}")
-    print(f"Race: {character['Race'][0]}")
-    print(f"Ray: {character['Ray'][0]}")
-    print(f"Power: {character['Power'][0]}")
-    print(f"Job: {character['Job'][0]}")
+    
+    print(f"Name: {character.get('Name', ['Unknown'])[0]}")     
+    print(f"Race: {character.get('Race', ['Unknown'])[0]}")
+    print(f"Ray: {character.get('Ray', ['Unknown'])[0]}")
+    print(f"Power: {character.get('Power', ['Unknown'])[0]}")
+    print(f"Job: {character.get('Job', ['Unknown'])[0]}")
     stats_display(character)
    
    
@@ -23,10 +24,20 @@ def stats_display(character):
     print("=== Attributes ===")
     print()
     for attribute in attributes_list:
-        print(f"{attribute}: {character[attribute][0]}")
+        value = character.get(attribute, [])
+        if not value:
+            print(f"{attribute}: —")
+        else:
+            print(f"{attribute}: {value[0]}")
+
     print()
     print("=== Combat Attributes ===")
     print()
     for attribute in attributes_combat:
-        print(f"{attribute}: {character[attribute][0]}")
+        value = character.get(attribute, [])
+        if not value:
+            print(f"{attribute}: —")
+        else:
+            print(f"{attribute}: {value[0]}")
+
 
